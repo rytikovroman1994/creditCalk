@@ -43,5 +43,5 @@ export default function statusCretid(age, gender, sourceOfIncome, income, rankin
     return result
 }
 
-const result = statusCretid(50, 'man', 'Наёмный работник', 7, 1, 9, 15, 'Ипатека');
-console.log(result)
+// const result = statusCretid(50, 'man', 'Наёмный работник', 7, 1, 9, 15, 'Ипатека');
+// console.log(result)
