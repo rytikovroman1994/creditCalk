@@ -9,10 +9,10 @@ const infoForCheck = [
 // проверяем статус работы 
 export default function checkWorkStatus(sourceOfIncome) {
     // проверяем входыне данные
+    sourceOfIncome = sourceOfIncome.toLowerCase();
     if(infoForCheck.indexOf(sourceOfIncome) < 0) {
         throw new Error('Проверьте входные данные поля информации о работе');
     }
-    sourceOfIncome = sourceOfIncome.toLowerCase();
     switch(sourceOfIncome) {
         case 'безработный':
             return false

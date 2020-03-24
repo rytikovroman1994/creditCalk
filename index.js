@@ -8,7 +8,7 @@ import creditRate from './setting/creditRate';
 import checkingPossibilityLoan from './setting/checkingPossibilityLoan';
 import calculateAnnualPaymentAmount from './setting/calculateAnnualPaymentAmount';
 
-function statusCretid(age, gender, sourceOfIncome, income, ranking, requestedAmount, term, intent){
+export default function statusCretid(age, gender, sourceOfIncome, income, ranking, requestedAmount, term, intent){
     // переменная хранящая базовою ставку
     const initialBet = 10;
     // переменная хранящая результат функции 
@@ -29,7 +29,6 @@ function statusCretid(age, gender, sourceOfIncome, income, ranking, requestedAmo
     const annualAmount = calculateAnnualPaymentAmount(requestedAmount, statusSumCredit, term, initialBet, newEate);
     // проверяем меньше ли ежегодгный платёж половины годового дохода
     const statusWage = checkAnnualPayment(annualAmount, income);
-    console.log(statusAge, statusYeard, statusCreditStatus, statusJob, statusWage, statusSumCredit, newEate, annualAmount);
     // проверяем возможена ли выдача кридита
     const statusPossibilityLoan = checkingPossibilityLoan(statusAge, statusYeard, statusCreditStatus, statusJob, statusWage);
     // добавляем данные в ответ
@@ -44,5 +43,5 @@ function statusCretid(age, gender, sourceOfIncome, income, ranking, requestedAmo
     return result
 }
 
-// const result = statusCretid(36, 'man', 'собственный бизнес', 3.77, 2, 6, 6, 'ипотека');
-// console.log(result)
+const result = statusCretid(50, 'man', 'Наёмный работник', 7, 1, 9, 15, 'Ипатека');
+console.log(result)
